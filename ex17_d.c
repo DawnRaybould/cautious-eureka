@@ -115,9 +115,8 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
 		die("Already set, delete it first");
 
 	addr->set = 1;
-	//warning: bug, read the "How to Break It" and fix this
 	char *res = strncpy(addr->name, name, MAX_DATA);
-	//demonstrates the strncpy bug
+	
 	if(!res)
 		die("Name copy failed");
 
